@@ -43,18 +43,22 @@ uncompress(output2)
 let compress = str => {
     console.log('compress');
     let arr = str.split('');
+    console.log(arr);
 
     let counts = [];
-    let count = 0;
 
     for (let i = 0; i < arr.length; i++) {
 
-        if (arr[i - 1] == arr[i] || 0) {
-            count++
-        } else {
-            counts.push([count, arr[i]]);
-        }
     }
+
+    let tempArr = [];
+    let count = 0;
+    arr.map((item, index, arr) => {
+        console.log(item);
+        console.log(index);
+        // console.log(arr);
+    })
+    console.log(tempArr);
 
     return counts;
 }
@@ -63,5 +67,6 @@ let decompress = c => {
     console.log('decompress');
 }
 
-console.log(compress('aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaa'));
+// console.log(compress('aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaa'));
+console.log(compress('aabaa'));
 decompress();
