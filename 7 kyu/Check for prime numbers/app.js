@@ -42,8 +42,8 @@ Completed in 2ms
 
 /* 2 variant complete*/
 const isPrime = num => {
-    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
-        if(num % i === 0) return false; 
+    for (let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if (num % i === 0) return false;
     return num > 1;
 }
 
@@ -54,3 +54,31 @@ console.log(isPrime(61)) //true
 console.log(isPrime(571)) //true
 console.log(isPrime(573)) //false
 console.log(isPrime(25)) //false
+
+
+/**
+ * variants
+ *
+ * 1
+ const isPrime = (n, divisor = 2) =>
+  n < 2
+    ? false
+    : divisor === n
+    ? true
+    : n % divisor === 0
+    ? false
+    : isPrime(n, divisor + 1);
+
+ * 2
+    const isPrime = length => length > 1
+  ? Array
+    .from({ length }, (_,i) => length % ++i === 0)
+    .filter(Boolean).length === 2
+  : false
+
+  *3
+const isPrime = n => (n = Math.abs(n)) > 1 &&
+  [...Array(n).keys()].reduce((r, e) =>
+    e < 2 ? true : (n % e) ? r : false, true);
+
+ */
