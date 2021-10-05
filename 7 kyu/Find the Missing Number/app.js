@@ -29,3 +29,10 @@ console.log(missingNo(arr3));
 
 
 //complete 05.10.2021
+
+/**
+ * compact version
+function missingNo(nums) {
+    return ((nums.length + 1) * nums.length / 2) - (nums.reduce((a, b) => a + b));
+}
+ */
