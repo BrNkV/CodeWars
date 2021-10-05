@@ -31,8 +31,49 @@ console.log(missingNo(arr3));
 //complete 05.10.2021
 
 /**
- * compact version
+ * my compact version
 function missingNo(nums) {
     return ((nums.length + 1) * nums.length / 2) - (nums.reduce((a, b) => a + b));
 }
+ */
+
+/** 
+ * another variant 1
+ *
+  function missingNo(n){
+  const arr = Array.from({length: 101}, (_,i)=> i)
+  for (let i of arr){
+    if ( !n.includes(i) ){
+      return i
+    }
+  }
+}
+*/
+
+/** 
+ * another variant 2
+    let missingNo =(n)=> {
+    for(i=0;i<=100;i++){
+        if(!n.includes(i)){
+            return i
+        }}}
+ 
+*/
+
+/**
+ * another variant 3
+ function missingNo(nums) {
+  for(i=0;i!=100;i++){
+    if(nums.indexOf(i) === -1){
+      return i
+    }
+  }
+}
+ */
+
+/**
+ * another variant 4
+ *  LIKE variant
+    const missingNo = nums =>
+    nums.reduce((pre, val) => pre - val, 5050);
  */
