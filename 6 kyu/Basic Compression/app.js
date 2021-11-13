@@ -1,5 +1,4 @@
 
-
 /*
 First, You will write a very basic compression algorithm
 
@@ -40,33 +39,32 @@ uncompress(output2)
 */
 
 
-let compress = str => {
-    console.log('compress');
-    let arr = str.split('');
-    console.log(arr);
+let compress = (str) => {
+    let string = str.split(""),
+        counter = 1,
+        out = [];
 
-    let counts = [];
-
-    for (let i = 0; i < arr.length; i++) {
-
-    }
-
-    let tempArr = [];
-    let count = 0;
-    arr.map((item, index, arr) => {
-        console.log(item);
-        console.log(index);
-        // console.log(arr);
-    })
-    console.log(tempArr);
-
-    return counts;
+    string.reduce((accumulator, currentValue, currentIndex,
+        array) => {
+        if (currentValue === array[currentIndex + 1]) {
+            counter++;
+        } else {
+            out.push([counter, currentValue]);
+            counter = 1;
+        }
+    }, "");
+    return out;
 }
+
+
+// [[26:a] [1:b] [18:a]]
+console.log(compress('aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaa'));
+
+//[[14,"a"],[1,"b"],[41,"a"],[1,"c"]]
+console.log(compress('aaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac'));
 
 let decompress = c => {
     console.log('decompress');
 }
 
-// console.log(compress('aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaa'));
-console.log(compress('aabaa'));
 decompress();
