@@ -38,6 +38,7 @@ uncompress(output2)
 "abcde"
 */
 
+console.log('=========COMPRESS======================');
 
 let compress = (str) => {
     let string = str.split(""),
@@ -63,8 +64,19 @@ console.log(compress('aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaa'));
 //[[14,"a"],[1,"b"],[41,"a"],[1,"c"]]
 console.log(compress('aaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac'));
 
-let decompress = c => {
-    console.log('decompress');
+console.log('=========DECOMPRESS======================');
+
+let decompress = arr => {
+    let tmp = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        while (arr[i][0] > 0) {
+            tmp.push(arr[i][1]);
+            arr[i][0]--;
+        }
+    }
+    console.log(tmp.join(''));
 }
 
-decompress();
+decompress([[26, 'a'], [1, 'b'], [18, 'a']]);
+decompress([[14, 'a'], [1, 'b'], [41, 'a'], [1, 'c']]);
