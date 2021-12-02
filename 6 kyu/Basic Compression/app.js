@@ -54,7 +54,11 @@ let compress = (str) => {
             counter = 1;
         }
     }, "");
-    return out;
+
+    // console.log(out.flat().length);
+
+    if (out.flat().length < str.length) return out;
+    else return str;
 }
 
 
@@ -63,6 +67,8 @@ console.log(compress('aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaa'));
 
 //[[14,"a"],[1,"b"],[41,"a"],[1,"c"]]
 console.log(compress('aaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac'));
+
+console.log(compress('abcde'));
 
 console.log('=========DECOMPRESS======================');
 
@@ -75,8 +81,9 @@ let decompress = arr => {
             arr[i][0]--;
         }
     }
-    console.log(tmp.join(''));
+    if (typeof arr === 'string') return arr;
+    else return tmp.join('');
 }
 
-decompress([[26, 'a'], [1, 'b'], [18, 'a']]);
-decompress([[14, 'a'], [1, 'b'], [41, 'a'], [1, 'c']]);
+console.log(decompress([[26, 'a'], [1, 'b'], [18, 'a']]));
+console.log(decompress([[14, 'a'], [1, 'b'], [41, 'a'], [1, 'c']]));
