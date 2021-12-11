@@ -1,4 +1,4 @@
-
+// NOT complete
 /*
 First, You will write a very basic compression algorithm
 
