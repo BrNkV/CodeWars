@@ -7,10 +7,16 @@
 repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
  */
 
-function repeatStr (n, s) {
-    return '';
+function repeatStr(n, s) {
+  let out = '';
+
+  for (let i = 0; i < n; i++) {
+    out += s;
   }
 
-  Test.assertSimilar(repeatStr(3, "*"), "***");
-  Test.assertSimilar(repeatStr(5, "#"), "#####");
-  Test.assertSimilar(repeatStr(2, "ha "), "ha ha ");
+  return out;
+}
+;//
+console.log(repeatStr(3, "*"));//, "***");
+console.log(repeatStr(5, "#"));//, "#####");
+console.log(repeatStr(2, "ha "));//', "ha ha ");;'

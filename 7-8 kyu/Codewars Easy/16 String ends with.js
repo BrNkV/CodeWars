@@ -1,4 +1,5 @@
 /**
+ //TODO
  * String ends with?
  * Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
  * 
@@ -12,8 +13,9 @@ solution('abc', 'd') // returns false
 
 
 function solution(str, ending) {
-    // TODO: complete
+    if(str.includes(ending)) return true;
+    else return false;
 }
 
-Test.assertEquals(solution('abcde', 'cde'), true)
-Test.assertEquals(solution('abcde', 'abc'), false)
+console.log(solution('abcde', 'cde'));// true)
+console.log(solution('abcde', 'abc'));// false)

@@ -1,4 +1,4 @@
-/**
+/**complete
  * 
  * Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
 
@@ -17,10 +17,12 @@ Don't worry about numbers, special characters, or non-string types being passed 
  */
 
 function capitalizeWord(word) {
-    word[0].toUpperCase();
-    return word;
-  }
+  word = word.split('');
+  let tmp = word[0].toString().toUpperCase();
+  word[0] = tmp;
+  return word.join('');
+}
 
-Test.assertSimilar(capitalizeWord('word'), 'Word');
-Test.assertSimilar(capitalizeWord('i'), 'I');
-Test.assertSimilar(capitalizeWord('glasswear'), 'Glasswear');
+console.log(capitalizeWord('word'));// 'Word');
+console.log(capitalizeWord('i'));// 'I');
+console.log(capitalizeWord('glasswear'));// 'Glasswear');

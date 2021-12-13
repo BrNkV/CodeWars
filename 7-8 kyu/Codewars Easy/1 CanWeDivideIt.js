@@ -1,7 +1,7 @@
-/**
+/** COMPLETE
  * Your task is to create the functionisDivideBy (or is_divide_by) to check if an integer number is divisible by both integers a and b.
 
-
+Ваша задача - создать функцию isDivideBy (или is_divide_by), чтобы проверить, делится ли целое число на оба целых числа a и b.
 
 (-12, 2, -6)  ->  true
 (-12, 2, -5)  ->  false
@@ -14,12 +14,14 @@
  */
 
 function isDivideBy(number, a, b) {
-    // good luck
+    if (number % a + number % b === 0) return true;
+    else return false;
 }
 
-isDivideBy(-12, 2, -6); //true
-isDivideBy(-12, 2, -5);// false;
-isDivideBy(45, 1, 6);// false;
-isDivideBy(45, 5, 15);// true;
-isDivideBy(4, 1, 4);// true;
-isDivideBy(15, -5, 3);// true;
+console.log(isDivideBy(-12, 2, -6)); //true
+console.log(isDivideBy(-12, 2, -5));// false;
+console.log(isDivideBy(-12, 2, -5));// false;
+console.log(isDivideBy(45, 1, 6));// false;
+console.log(isDivideBy(45, 5, 15));// true;
+console.log(isDivideBy(4, 1, 4));// true;
+console.log(isDivideBy(15, -5, 3));// true;
