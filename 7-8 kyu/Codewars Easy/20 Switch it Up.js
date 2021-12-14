@@ -1,4 +1,6 @@
-/*When provided with a number between 0-9, return it in words.
+/* TODO
+
+When provided with a number between 0-9, return it in words.
 
 Input :: 1
 
@@ -34,9 +36,16 @@ switch (expression) {
 */
 
 function switchItUp(number){
-    //Write your own Code!
+    switch (number >= 0 && number <= 9) {
+      case 'One':
+        number == 1;
+        break;
+    
+      default:
+        break;
+    }
     }
 
-    assert.strictEqual(switchItUp(1),"One");
-    assert.strictEqual(switchItUp(3),"Three");
-    assert.strictEqual(switchItUp(5),"Five");
+  console.log((switchItUp(1)));//,"One");
+  console.log((switchItUp(3)));//,"Three");
+  console.log((switchItUp(5)));//,"Five");

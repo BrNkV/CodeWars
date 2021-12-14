@@ -1,4 +1,4 @@
-/**
+/** complete
  * Write a function called repeatStr which repeats the given string string exactly n times.
  * 
  * Напишите функцию с именем repeatStr, которая повторяет заданную строку ровно n раз.
