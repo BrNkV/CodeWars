@@ -1,2 +1,3 @@
 //complete
-let stringToNumber = (str) => +str;
+//add
+let stringToNumber = str => +str;

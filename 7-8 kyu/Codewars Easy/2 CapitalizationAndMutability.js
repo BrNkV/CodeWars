@@ -1,4 +1,5 @@
 /**complete
+ * add
  * 
  * Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
 
@@ -26,3 +27,16 @@ function capitalizeWord(word) {
 console.log(capitalizeWord('word'));// 'Word');
 console.log(capitalizeWord('i'));// 'I');
 console.log(capitalizeWord('glasswear'));// 'Glasswear');
+
+//other variants
+/**
+ * const capitalizeWord = (word) => word.replace(word.charAt(0), word.charAt(0).toUpperCase());
+ * 
+ * 
+ * 
+ * function capitalizeWord(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+
+const capitalizeWord = word => word[0].toUpperCase()+word.slice(1);
+ */
