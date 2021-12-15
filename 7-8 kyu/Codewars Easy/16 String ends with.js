@@ -1,5 +1,6 @@
 /**
  //COMPLETE
+ add
  * String ends with?
  * Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
  * 
@@ -20,3 +21,9 @@ console.log(solution('abcde', 'cde'));// true)
 console.log(solution('abcde', 'abc'));// false)
 console.log(solution('abcdefrd', 'def'));// false)
 console.log(solution('abcdefrd', 'rd'));// false)
+
+//best practice
+
+function solution(str, ending){
+    return str.endsWith(ending);
+  }

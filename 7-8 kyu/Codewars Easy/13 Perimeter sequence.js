@@ -1,5 +1,5 @@
 /**complete
- * 
+ * add
  * Perimeter sequence
  * The first three stages of a sequence are shown.
  * The blocksize is a by a and a ≥ 1.
@@ -12,9 +12,7 @@
  */
 
 function perimeterSequence(a, n) {
-  let p = 2 * (a + a) * n;
-  return p;
-
+  return p = 2 * (a + a) * n;
 }
 console.log(perimeterSequence(1, 3))//, 12)
 console.log(perimeterSequence(1, 2))//, 8)

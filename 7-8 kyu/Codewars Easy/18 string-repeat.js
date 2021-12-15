@@ -1,4 +1,6 @@
 /** complete
+ * add
+ * 
  * Write a function called repeatStr which repeats the given string string exactly n times.
  * 
  * Напишите функцию с именем repeatStr, которая повторяет заданную строку ровно n раз.
@@ -20,3 +22,11 @@ function repeatStr(n, s) {
 console.log(repeatStr(3, "*"));//, "***");
 console.log(repeatStr(5, "#"));//, "#####");
 console.log(repeatStr(2, "ha "));//', "ha ha ");;'
+
+//понравились решения
+
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
+
+repeatStr = (n, s) => s.repeat(n)

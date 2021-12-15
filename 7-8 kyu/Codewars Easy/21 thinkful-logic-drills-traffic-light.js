@@ -1,4 +1,5 @@
-/**
+/**complete
+ * add
  * 
  * You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
 
@@ -18,11 +19,20 @@ Note: Use "" instead of '' in C++.
  */
 
 function updateLight(current) {
-  
-    //your code here!
-  
+  switch (current) {
+    case "green": return 'yellow';
+    case "yellow": return 'red';
+    case "red": return 'green';
   }
+}
 
-  assert.strictEqual(updateLight("green"), "yellow");
-  assert.strictEqual(updateLight("yellow"), "red");
-  assert.strictEqual(updateLight("red"), "green");
+console.log((updateLight("green")));//, "yellow");
+console.log((updateLight("yellow")));//, "red");
+console.log((updateLight("red")));//, "green");
+
+//other variants
+const updateLight = current => ({
+  green: 'yellow',
+  yellow: 'red',
+  red: 'green',
+})[current];

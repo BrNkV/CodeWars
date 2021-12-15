@@ -1,4 +1,5 @@
 /** complete
+ * add
  * 
  * This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
  * 
@@ -22,3 +23,13 @@ console.log(simpleMultiplication(1));//,9,'Should return double given argument..
 console.log(simpleMultiplication(8));//,64,'Should return given argument times eight...')
 console.log(simpleMultiplication(4));//,32,'Should return given argument times eight...')
 console.log(simpleMultiplication(5));//,45,'Should return given argument times nine...')
+
+//best practice
+
+function simpleMultiplication(n) {
+    return n * (n % 2 ? 9 : 8);
+}
+
+function simpleMultiplication(n){
+    return n % 2 == 0 ? n * 8 : n * 9
+  }

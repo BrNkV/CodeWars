@@ -1,4 +1,5 @@
 /** Complete
+ * add
  * Very simple, given an integer or a floating-point number, find its opposite.
  *
  * Очень просто, имея целое число или число с плавающей запятой, найти его противоположность.

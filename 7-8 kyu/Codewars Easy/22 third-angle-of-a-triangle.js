@@ -1,4 +1,6 @@
-/**
+/**complete 
+ * add
+ * 
  * You are given two interior angles (in degrees) of a triangle.
 
 Write a function to return the 3rd.
@@ -13,9 +15,7 @@ Note: only positive integers will be tested.
 
  */
 
-function otherAngle(a, b) {
-    return 0;
-}
+let otherAngle = (a, b) => 180 - (a + b);
 
 assert.strictEqual(otherAngle(30, 60), 90);
 assert.strictEqual(otherAngle(60, 60), 60);
