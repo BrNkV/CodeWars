@@ -17,7 +17,7 @@ Note: only positive integers will be tested.
 
 let otherAngle = (a, b) => 180 - (a + b);
 
-assert.strictEqual(otherAngle(30, 60), 90);
-assert.strictEqual(otherAngle(60, 60), 60);
-assert.strictEqual(otherAngle(43, 78), 59);
-assert.strictEqual(otherAngle(10, 20), 150);
+console.log(otherAngle(30, 60));//, 90);
+console.log(otherAngle(60, 60));//, 60);
+console.log(otherAngle(43, 78));//, 59);
+console.log(otherAngle(10, 20));//, 150);
