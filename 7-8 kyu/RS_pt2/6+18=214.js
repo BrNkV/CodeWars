@@ -14,16 +14,37 @@ Examples
  */
 
 function add(num1, num2) {
-    let out = '';
+    let out = [];
 
     let num1arr = num1.toString().split('');
     let num2arr = num2.toString().split('');
-    let max = Math.max(num1arr.length, num2arr.length);
+
+    let last1 = num1arr[num1arr.length - 1];
+    let last2 = num2arr[num2arr.length - 1];
+
+    function sum(a, b) {
+        return (+a.pop()) + (+b.pop())
+    }
+
+    // out.push((+last1) + (+last2));
+    // function getSum() {
+    //     if (last1 == undefined) {
+    //         out.unshift(sum([0], num2arr));
+    //     } else if (last2 == undefined) {
+    //         out.unshift(sum(num1arr, [0]));
+    //     } else {
+    //         out.unshift(sum(num1arr, num2arr));
+    //     }
+    //     getSum();
+    // }
+    // getSum();
+
+    out = [...sum]
+
+    // out.push((+num1arr.pop()) + (+num2arr.pop()));
 
 
-
-
-    console.log(out);
+    return out;
 
 }
 
@@ -32,7 +53,7 @@ function add(num1, num2) {
 console.log(add(2, 11));//, 13);
 // console.log(add(0, 1));//, 1);
 // console.log(add(0, 0));//, 0);
-console.log(add(16, 18));//, 214);
+// console.log(add(16, 18));//, 214);
 // console.log(add(26, 39));//, 515);
 // console.log(add(122, 81));//, 1103);
 // console.log(add(1222, 30277));//, 31499);
