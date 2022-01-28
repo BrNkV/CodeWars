@@ -16,13 +16,34 @@ Translations are welcome!
 
 function myLanguages(results) {
     let out = [];
-    for (let key in results) {
-        if (results[key] >= 60) out.push(key);
+    let tmp = [];
+
+    for (key in results) {
+        if (results[key] >= 60) tmp.push(results[key]);
     }
-    console.log(out);
+
+    tmp.sort((a, b) => b - a);
+
+    tmp.forEach(element => {
+        out.push(getKeyByValue(results, element));
+    });
+
+    function getKeyByValue(object, value) {
+        return Object.keys(object).find(key => object[key] === value);
+    }
+
     return out;
 }
 
 myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 });//, ["Ruby", "Python"]
 myLanguages({ "Hindi": 60, "Greek": 71, "Dutch": 93 });//, ["Dutch", "Greek", "Hindi"]
 myLanguages({ "C++": 50, "ASM": 10, "Haskell": 20 });//, []
+
+
+/**
+ * normal answer
+ * 
+ function myLanguages(results) {
+  return Object.keys(results).filter(r => results[r] > 59).sort((a,b) => results[b] - results[a]);
+}
+ */
