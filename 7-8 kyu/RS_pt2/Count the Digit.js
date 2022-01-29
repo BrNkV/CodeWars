@@ -20,7 +20,11 @@ Note that 121 has twice the digit 1.
  */
 
 function nbDig(n, d) {
-    // your code
+    let out = 0;
+    for (let i = 0; i <= n; i++) {
+        let square = (i * i + "").split("");
+        square.forEach((s) => s == d ? out++ : null)
+    } return out;
 }
 
 console.log(nbDig(5750));//, 0), 4700)

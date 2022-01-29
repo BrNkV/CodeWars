@@ -13,12 +13,7 @@ getDecimal(-0.2) === 0.2
 //     return +Math.abs(n - Math.trunc(n)).toFixed(decimalPlaces);
 // }
 
-function getDecimal(n) {
-    let str = n.toString();
-
-
-    console.log(str.split(''));
-}
+let getDecimal = n => Math.abs(n%1);
 
 
 console.log(getDecimal(10));//, 0)
@@ -26,3 +21,11 @@ console.log(getDecimal(-1.2));//, 0.2)
 console.log(getDecimal(-1.25));//, 0.2)
 console.log(getDecimal(4.5));//, 0.5
 console.log(getDecimal(4.523123));//, 0.5
+
+
+/**good
+ * 
+ function getDecimal(n){
+  return Math.abs(n - ~~n);
+}
+ */

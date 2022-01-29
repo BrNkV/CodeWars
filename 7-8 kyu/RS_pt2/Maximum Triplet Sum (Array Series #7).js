@@ -31,24 +31,19 @@ Note : duplications are not included when summing , (i.e) the numbers added only
 
  */
 
-let outArr = [];
-function maxTriSum(numbers) {
-    let maxNum = Math.max.apply(null, numbers);
-    // console.log(maxNum);
-    let newArr = numbers.filter((f) => { return f !== maxNum });
-    // console.log(newArr);
-    // console.log(outArr);
-    if (outArr.length < 3) {
-        outArr.push(maxNum);
-        maxTriSum(newArr);
-    }
-    else {
-        let out = outArr.reduce((a, b) => a + b, 0);
-        console.log(out);
-        return out;
-    }
+let maxTriSum = numbers => {
+    const sorted = [...new Set(numbers.sort((a, b) => b - a))];
+    return sorted[0] + sorted[1] + sorted[2]
 }
 
-maxTriSum([3, 2, 6, 8, 2, 3]);//,17
-maxTriSum([-3, -27, -4, -2, -27, -2]);//,-9);
-maxTriSum([-13, -50, 57, 13, 67, -13, 57, 108, 67]);//,232);
+console.log(maxTriSum([3, 2, 6, 8, 2, 3]));//,17
+console.log(maxTriSum([-3, -27, -4, -2, -27, -2]));//,-9);
+console.log(maxTriSum([-13, -50, 57, 13, 67, -13, 57, 108, 67]));//,232);
+
+/**good
+ * 
+ const maxTriSum = numbers => {
+  const [a,b,c,...rest] = [...new Set([...numbers])].sort((a,b)=>b-a)
+  return a+b+c
+}
+ */

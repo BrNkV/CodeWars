@@ -14,7 +14,13 @@ The combine function should be a good citizen, so should not mutate the input ob
 
 
 function combine() {
-    // Your code here
+    let obj = {}
+    for (let i = 0; i < arguments.length; i++) {
+        for (let key in arguments[i]) {
+            obj[key] = obj[key] ? obj[key] + arguments[i][key] : arguments[i][key];
+        }
+    }
+    return obj;
 }
 
 const objA = { a: 10, b: 20, c: 30 }
@@ -26,3 +32,10 @@ console.log(combine(objA, objB)); //{ a: 13, b: 20, c: 36, d: 3 })
 console.log(combine(objA, objC)); //{ a: 15, b: 20, c: 30, d: 11, e: 8 })
 console.log(combine(objA, objB, objC)); // { a: 18, b: 20, c: 36, d: 14, e: 8 })
 console.log(combine(objA, objC, objD)); //{ a: 15, b: 20, c: 33, d: 11, e: 8 })
+
+
+/**good
+ * 
+ const combine = (...args) =>
+  args.reduce((pre, val) => (Object.keys(val).forEach(v => pre[v] = (pre[v] || 0) + val[v]), pre), {});
+ */
