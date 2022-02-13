@@ -43,22 +43,35 @@ function convert(input, source, target) {
 }
 
 let Alphabet = {
-    BINARY: '01',
-    OCTAL: '01234567',
-    DECIMAL: '0123456789',
-    HEXA_DECIMAL: '0123456789abcdef',
-    ALPHA_LOWER: 'abcdefghijklmnopqrstuvwxyz',
-    ALPHA_UPPER: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    ALPHA: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  BINARY: '01',
+  OCTAL: '01234567',
+  DECIMAL: '0123456789',
+  HEXA_DECIMAL: '0123456789abcdef',
+  ALPHA_LOWER: 'abcdefghijklmnopqrstuvwxyz',
+  ALPHA_UPPER: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  ALPHA: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 };
 
 
-console.log(convert("15", dec, oct));//, '17', '"15" dec -> oct');
 console.log(convert("15", dec, bin));//, '1111', '"15" dec -> bin');
+console.log(convert("15", dec, oct));//, '17', '"15" dec -> oct');
 console.log(convert("1010", bin, dec));//, '10', '"1010" bin -> dec');
 console.log(convert("1010", bin, hex));//, 'a', '"1010" bin -> hex');
 console.log(convert("0", dec, alpha));//, 'a', '"0" dec -> alpha');
 console.log(convert("27", dec, allow));//, 'bb', '"27" dec -> alpha_lower');
 console.log(convert("hello", allow, hex));//, '320048', '"hello" alpha_lower -> hex')
 console.log(convert("SAME", alup, alup));//, 'SAME', '"SAME" alpha_upper -> alpha_upper');
+
+// не мое решение... своего пока нет, в процессе....
+function convert(input, source, target) {
+  let s = 0; let str = '';
+  for (let i = 0; i < input.length; i++) {
+    s = s * source.length + source.indexOf(input[i]);
+  }
+  while (s > 0) {
+    str = target[s % target.length] + str;
+    s = Math.floor(s / target.length);
+  }
+  return str ? str : target[0];
+}
