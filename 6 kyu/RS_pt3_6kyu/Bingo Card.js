@@ -21,19 +21,36 @@ The numbers must be in the order of their column: B, I, N, G, O. Within the colu
 */
 
 function getCard() {
-
-    let out = [];
-
     function rand(min, max) {
         let rand = min - 0.5 + Math.random() * (max - min + 1);
         return Math.round(rand);
     }
 
-    for (let i = 0; i <= 24; i++) {
-
+    function column(min, max, count, prefix) {
+        let out = [];
+        for (let i = 0; i <= count; i++) {
+            let tmp = `${prefix}${rand(min, max)}`;
+            if (!out.includes(tmp)) out.push(tmp);
+            else i--
+        }
+        return out;
     }
 
-    return out;
+    let tmpArr = [...column(1, 15, 4, 'B'), ...column(16, 30, 4, 'I'), ...column(31, 45, 3, 'N'), ...column(46, 60, 4, 'G'), ...column(61, 75, 4, 'O'),];
+    return tmpArr;
 }
 
 console.log(getCard());
+
+
+/**good
+ * function getCard()
+{
+  return [...'BINGO'].reduce((a, b, i) => {
+    let s = new Set;
+    while (s.size < 5) s.add(~~(Math.random() * 15 + 1 + i * 15))
+    let nums = [...s]
+    return a.concat([...Array(b == 'N' ? 4 : 5)].map(_ => b + nums.pop()))
+  }, [])
+}
+ */
