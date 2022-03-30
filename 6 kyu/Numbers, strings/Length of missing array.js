@@ -21,21 +21,21 @@ There will always be a missing element and its length will be always between the
 
 function getLengthOfMissingArray(arrayOfArrays) {
 
-    const out = arrayOfArrays
-        .map(a => a ? a.length : 0)
-        .sort((a, b) => a - b)
+  const out = (arrayOfArrays || [])
+    .map(a => a ? a.length : 0)
+    .sort((a, b) => a - b)
 
-    if (out.includes(0)) {
-        return 0
-    }
-
-    for (let i = 0; i < out.length - 1; i++) {
-        if (out[i] + 1 !== out[i + 1]) {
-            return out[i] + 1
-        }
-    }
-
+  if (out.includes(0)) {
     return 0
+  }
+
+  for (let i = 0; i < out.length - 1; i++) {
+    if (out[i] + 1 !== out[i + 1]) {
+      return out[i] + 1
+    }
+  }
+
+  return 0
 }
 
 console.log(getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])); //, 3);
@@ -46,21 +46,20 @@ console.log(getLengthOfMissingArray([])); //, 0);
 
 /**good
  * 
- * function getLengthOfMissingArray(arrayOfArrays) {
-  const lengths = (arrayOfArrays || [])
-    .map(a => a ? a.length : 0)
-    .sort((a, b) => a - b)
-  
-  if (lengths.includes(0)) {
+function getLengthOfMissingArray(arrayOfArrays) {
+  if (arrayOfArrays === null || arrayOfArrays.length === 0) {
     return 0
   }
-
-  for (let i = 0; i < lengths.length - 1; i++) {
-    if (lengths[i] + 1 !== lengths[i + 1]) {
-      return lengths[i] + 1
+  for(let i = 0; i < arrayOfArrays.length; i++) {
+    if (arrayOfArrays[i] === null || arrayOfArrays[i].length === 0) return 0
+  }
+  arrayOfArrays.sort(function(a, b) {
+    return a.length - b.length;
+  })
+  for(let i = 0; i < arrayOfArrays.length; i++) {
+    if (arrayOfArrays[i].length + 1 !== arrayOfArrays[i + 1].length) {
+      return arrayOfArrays[i].length + 1
     }
   }
-
-  return 0
 }
  */
