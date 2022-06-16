@@ -13,3 +13,10 @@ In case you haven't come across the map method for arrays, here is how it works:
 The map method does not mutate the original array.
  */
 
+Array.prototype.map = function (param) {
+    // console.log(param)
+    console.log(this)
+    // console.log(arguments)
+}
+
+let arr = [1, 2, 3].map(x => x ** 2) === [1, 4, 9]
