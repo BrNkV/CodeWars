@@ -13,14 +13,26 @@ squaresNeeded(4) === 3
 Input is always going to be valid/reasonable: ie: a non negative number; extra cookie for not using a loop to compute square-by-square (at least not directly) and instead trying a smarter approach [hint: some peculiar operator]; a trick converting the number might also work: impress me!
  */
 
-function squaresNeeded(grains){
-    //your code here
-  }
+function squaresNeeded(grains) {
+    return Math.sqrt(grains)
+}
 
-console.log()
-
-  console.log(squaresNeeded(0));// 0;
-  console.log(squaresNeeded(1));// 1;
-  console.log(squaresNeeded(2));// 2;
-  console.log(squaresNeeded(3));// 2;
-  console.log(squaresNeeded(4));// 3;
+console.log(squaresNeeded(0));// 0;
+console.log(squaresNeeded(1));// 1;
+console.log(squaresNeeded(2));// 2;
+console.log(squaresNeeded(3));// 2;
+console.log(squaresNeeded(4));// 3;
+console.log(squaresNeeded(5));// 3;
+console.log(squaresNeeded(6));// 3;
+console.log(squaresNeeded(7));// 3;
+console.log(squaresNeeded(8));// 4;
+console.log(squaresNeeded(9));// 4;
+console.log(squaresNeeded(10));// 4;
+console.log(squaresNeeded(11));// 4;
+console.log(squaresNeeded(12));// 4;
+console.log(squaresNeeded(13));// 4;
+console.log(squaresNeeded(14));// 4;
+console.log(squaresNeeded(15));// 4;
+console.log(squaresNeeded(16));// 5;
+console.log(squaresNeeded(17));// 5;
+console.log(squaresNeeded(18));// 5;
