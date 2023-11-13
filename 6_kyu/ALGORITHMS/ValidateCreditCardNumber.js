@@ -32,7 +32,7 @@ Finally, take that sum and divide it by 10. If the remainder equals zero, the or
  */
 
 function validate(cardNum){
-  
+  console.log(cardNum)
 }
 
 console.log(validate(1234));
